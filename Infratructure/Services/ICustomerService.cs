@@ -5,10 +5,10 @@ namespace Infratructure.Services;
 
 public interface ICustomerService
 {
-    ApiResponse<List<Customer>> GetAll();
-    ApiResponse<Customer> GetById(int id);
-    ApiResponse<bool> Add(Customer data);
-    ApiResponse<bool> Update(Customer data);
-    ApiResponse<bool> Delete(int id);
-    public ApiResponse<List<Customer>> GetByCity(string city);
+    Task<ApiResponse<List<Customer>>> GetAll();
+    Task<ApiResponse<Customer>> GetById(int id);
+    Task<ApiResponse<bool>> Add(Customer data);
+    Task<ApiResponse<bool>> Update(Customer data);
+    Task<ApiResponse<bool>> Delete(int id);
+    Task<ApiResponse<List<Customer>>> GetByCity(string city);
 }

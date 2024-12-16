@@ -9,34 +9,34 @@ namespace WebApp.Controllers;
 public class LoanController(ILoanService loanService): ControllerBase
 {
     [HttpGet]
-    public ApiResponse<List<Loan>> GetAll()
+    public async Task<ApiResponse<List<Loan>>> GetAll()
     {
-        return loanService.GetAll();
+        return await loanService.GetAll();
     }
     [HttpGet("{id:int}")]
-    public ApiResponse<Loan> GetById(int id)
+    public async Task<ApiResponse<Loan>> GetById(int id)
     {
-        return loanService.GetById(id);
+        return await loanService.GetById(id);
     }
     [HttpPost]
-    public ApiResponse<bool> Add(Loan loan)
+    public async Task<ApiResponse<bool>> Add(Loan loan)
     {
-        return loanService.Add(loan);
+        return await loanService.Add(loan);
     }
     [HttpPut]
-    public ApiResponse<bool> Update(Loan loan)
+    public async Task<ApiResponse<bool>> Update(Loan loan)
     {
-        return loanService.Update(loan);
+        return await loanService.Update(loan);
     }
     [HttpDelete]
-    public ApiResponse<bool> Delete(int id)
+    public async Task<ApiResponse<bool>> Delete(int id)
     {
-        return loanService.Delete(id);
+        return await loanService.Delete(id);
     }
     [HttpGet("Count-Loan")]
-    public ApiResponse<int> CountLoan()
+    public async Task<ApiResponse<int>> CountLoan()
     {
-        return loanService.CountLoan();
+        return await loanService.CountLoan();
     }
 
 }

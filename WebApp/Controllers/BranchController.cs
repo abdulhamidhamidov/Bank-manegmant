@@ -9,34 +9,35 @@ namespace WebApp.Controllers;
 public class BranchController(IBranchService branchService): ControllerBase
 {
     [HttpGet]
-    public ApiResponse<List<Branch>> GetAll()
+    public async Task<ApiResponse<List<Branch>>> GetAll()
     {
-        return branchService.GetAll();
+        return await branchService.GetAll();
     }
     [HttpGet("{id:int}")]
-    public ApiResponse<Branch> GetById(int id)
+    public async Task<ApiResponse<Branch>> GetById(int id)
+
     {
-        return branchService.GetById(id);
+        return await branchService.GetById(id);
     }
     [HttpPost]
-    public ApiResponse<bool> Add(Branch branch)
+    public async Task<ApiResponse<bool>> Add(Branch branch)
     {
-        return branchService.Add(branch);
+        return await branchService.Add(branch);
     }
     [HttpPut]
-    public ApiResponse<bool> Update(Branch branch)
+    public async Task<ApiResponse<bool>> Update(Branch branch)
     {
-        return branchService.Update(branch);
+        return await branchService.Update(branch);
     }
     [HttpDelete]
-    public ApiResponse<bool> Delete(int id)
+    public async Task<ApiResponse<bool>> Delete(int id)
     {
-        return branchService.Delete(id);
+        return await branchService.Delete(id);
     }
 
     [HttpGet("Get-All-BranchName")]
-    public ApiResponse<List<string>> GetAllBranchName()
+    public async Task<ApiResponse<List<string>>> GetAllBranchName()
     {
-        return branchService.GetAllBranchName();
+        return await branchService.GetAllBranchName();
     }
 }

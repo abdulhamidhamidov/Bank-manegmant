@@ -9,33 +9,33 @@ namespace WebApp.Controllers;
 public class TransactionController(ITransactionService transactionService): ControllerBase
 {
     [HttpGet]
-    public ApiResponse<List<Transaction>> GetAll()
+    public async Task<ApiResponse<List<Transaction>>> GetAll()
     {
-        return transactionService.GetAll();
+        return await transactionService.GetAll();
     }
     [HttpGet("{id:int}")]
-    public ApiResponse<Transaction> GetById(int id)
+    public async Task<ApiResponse<Transaction>> GetById(int id)
     {
-        return transactionService.GetById(id);
+        return await transactionService.GetById(id);
     }
     [HttpPost]
-    public ApiResponse<bool> Add(Transaction transaction)
+    public async Task<ApiResponse<bool>> Add(Transaction transaction)
     {
-        return transactionService.Add(transaction);
+        return await transactionService.Add(transaction);
     }
     [HttpPut]
-    public ApiResponse<bool> Update(Transaction transaction)
+    public async Task<ApiResponse<bool>> Update(Transaction transaction)
     {
-        return transactionService.Update(transaction);
+        return await transactionService.Update(transaction);
     }
     [HttpDelete]
-    public ApiResponse<bool> Delete(int id)
+    public async Task<ApiResponse<bool>> Delete(int id)
     {
-        return transactionService.Delete(id);
+        return await transactionService.Delete(id);
     }
     [HttpGet("Max-amount")]
-    public ApiResponse<decimal> MaxAmount()
+    public async Task<ApiResponse<decimal>> MaxAmount()
     {
-        return transactionService.MaxAmount();
+        return await transactionService.MaxAmount();
     }
 }

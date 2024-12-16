@@ -5,10 +5,10 @@ namespace Infratructure.Services;
 
 public interface IBranchService
 {
-    ApiResponse<List<Branch>> GetAll();
-    ApiResponse<Branch> GetById(int id);
-    ApiResponse<bool> Add(Branch data);
-    ApiResponse<bool> Update(Branch data);
-    ApiResponse<bool> Delete(int id);
-    public ApiResponse<List<string>> GetAllBranchName();
+    Task<ApiResponse<List<Branch>>> GetAll();
+    Task<ApiResponse<Branch>> GetById(int id);
+    Task<ApiResponse<bool>> Add(Branch data);
+    Task<ApiResponse<bool>> Update(Branch data);
+    Task<ApiResponse<bool>> Delete(int id); 
+    Task<ApiResponse<List<string>>> GetAllBranchName();
 }

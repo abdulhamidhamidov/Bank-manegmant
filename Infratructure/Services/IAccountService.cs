@@ -5,10 +5,10 @@ namespace Infratructure.Services;
 
 public interface IAccountService
 {
-    ApiResponse<List<Account>> GetAll();
-    ApiResponse<Account> GetById(int id);
-    ApiResponse<bool> Add(Account data);
-    ApiResponse<bool> Update(Account data);
-    ApiResponse<bool> Delete(int id);
-    ApiResponse<decimal> GetSumOfAllBalance();
+    Task<ApiResponse<List<Account>>> GetAll();
+    Task<ApiResponse<Account>> GetById(int id);
+   Task<ApiResponse<bool>> Add(Account data);
+    Task<ApiResponse<bool>> Update(Account data);
+    Task<ApiResponse<bool>> Delete(int id);
+    Task<ApiResponse<decimal>> GetSumOfAllBalance();
 }
